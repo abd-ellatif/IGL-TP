@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import NavBar from './NavBar'
 import Button from './Button'
+import { Link } from 'react-router-dom'
+
+
 class  LogInNavBar extends Component {
     state = {  } 
     render() { 
@@ -18,7 +21,7 @@ class  LogInNavBar extends Component {
           txtColor="text-sky-600"
           handleClick={() => {}}
         >
-          inscrire
+          <Link to="./SignUp"> inscrire </Link>
         </Button>
       </NavBar>
         );
