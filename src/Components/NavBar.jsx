@@ -6,7 +6,7 @@ class NavBar extends Component {
 
     
     render() { 
-        let classList = "w-full h-20 p-5 flex flex-row-reverse"
+        let classList = "w-full h-20 p-5 flex flex-row-reverse sticky top-0 "
          classList += " "+this.props.bgColor;
         return (<nav className={classList} >
             {this.props.children}
