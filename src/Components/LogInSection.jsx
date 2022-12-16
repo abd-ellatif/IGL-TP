@@ -5,12 +5,16 @@ import Button from './Button';
 
 class LogInSection extends Component {
     state = {  } 
+    handleSubmit(event) {
+        alert('Google account was submitted');
+        event.preventDefault();
+      }
     render() {
         return (
         <div className="bg-gray-100 w-full h-screen flex flex-col place-items-center justify-evenly ">
         <h1 className="text-6xl font-bold text-blue-500">Connexion</h1>  
         <div className="flex flex-col place-items-center h-14">
-        <Button bgColor="bg-blue-900 ">
+        <Button bgColor="bg-blue-900 " handleClick={this.handleSubmit}>
         <i class="fa-brands fa-google px-3"></i>
             Ajouter votre compte Google
           </Button>   
