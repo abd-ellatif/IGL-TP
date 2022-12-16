@@ -3,6 +3,7 @@ import HeroSection from "./../Components/HeroSection";
 import LogInNavBar from "../Components/logInNavBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignUpSection from "../Components/SignUpSection";
+import LogInSection from "../Components/LogInSection";
 
 class HeroPage extends Component {
   state = {};
@@ -16,6 +17,10 @@ class HeroPage extends Component {
             <Route
               path="/SignUp"
               element={<SignUpSection></SignUpSection>}
+            ></Route>
+            <Route
+              path="/LogIn"
+              element={<LogInSection></LogInSection>}
             ></Route>
           </Routes>
         </Router>

@@ -7,14 +7,15 @@ import { Link } from 'react-router-dom'
 class  LogInNavBar extends Component {
     state = {  } 
     render() { 
+      let logo = <Link to="/"> Logo </Link>
         return (
-         <NavBar bgColor="bg-white">
+         <NavBar bgColor="bg-white/80" logo={logo}>
         <Button
           bgColor="bg-sky-600"
-          txtColor="text-gray-200"
+          txtColor="text-white"
           handleClick={() => {}}
         >
-          Se connecter
+          <Link to="/LogIn"> Se Connecter </Link>
         </Button>
         <Button
           bgColor="bg-gray-200"

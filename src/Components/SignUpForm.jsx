@@ -3,23 +3,9 @@ import Button from './Button';
 
 
 class SignUpForm extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {Nom: '',Prénom: '',Téléphone: '',Adresse :''};
+    
   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-  
-    handleChange(event) {
-        const changed = event.target.name;
-        this.setState({[changed]: event.target.value});
-    }
-  
-    handleSubmit(event) {
-      alert('A name was submitted: ' + this.state.value);
-      event.preventDefault();
-    }
+    
   
     render() {
       let labelClass = "grid grid-cols-1 text-blue-500";
@@ -29,25 +15,26 @@ class SignUpForm extends Component {
             <form className="p-10 grid grid-cols-2 gap-8 "onSubmit={this.handleSubmit}>
           <label className={labelClass}>
             Nom:
-            <input  name="Nom" className={inputClass} placeholder="ex : Mdni" type="text" value={this.state.nom} onChange={this.handleChange} />
+            <input  name="nom" className={inputClass} placeholder="ex : Mdni" type="text" value={this.props.nom} onChange={this.props.handleChange} />
           </label>
           <label className={labelClass}>
             Prénom:
-            <input name ="Prénom" className={inputClass} placeholder="ex : Rafik" type="text" value={this.state.nom} onChange={this.handleChange} />
+            <input name ="prenom" className={inputClass} placeholder="ex : Rafik" type="text" value={this.props.prenom} onChange={this.props.handleChange} />
           </label>
           <label className={labelClass}>
             Téléphone:
-            <input name="Téléphone" className={inputClass} placeholder="+213 XXXXXXXXX" type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="telephone" className={inputClass} placeholder="+213 XXXXXXXXX" type="text" value={this.props.telephone} onChange={this.props.handleChange} />
           </label>
           <label className={labelClass}>
             Adresse:
-            <input name="Adresse" className={inputClass} placeholder="ex : Alger-Oued Smar" type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="adresse" className={inputClass} placeholder="ex : Alger-Oued Smar" type="text" value={this.props.adresse} onChange={this.props.handleChange} />
           </label>
                     
         </form>   
         <div className="flex justify-center">
-        <Button bgColor="bg-blue-900 ">
-            Google
+        <Button handleClick={this.props.handleSubmit} bgColor="bg-blue-900 ">
+        <i class="fa-brands fa-google px-3"></i>
+            Ajouter votre compte Google
           </Button> 
 
         </div>
