@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 class UserCard extends Component {
     state = {expandIcon : "fa-solid fa-chevron-down",hidden : true}
     
-    cls = this.props.user.icon == null ? "fa-regular fa-circle-user" : this.props.user.icon;
+    cls = this.props.user.icon == null ? "fa-regular fa-circle-user fa-lg" : this.props.user.icon;
     handleExpand = ()=> {
         if (this.state.expandIcon == "fa-solid fa-chevron-down") {this.setState({expandIcon : "fa-solid fa-chevron-up",hidden : false})}
         else { this.setState({expandIcon :"fa-solid fa-chevron-down",hidden : true })}
@@ -15,39 +15,39 @@ class UserCard extends Component {
         
         return (
         <div className="static">
-        <div className="flex justify-around place-items-center w-48 bg-gray-400 rounded h-10">
+        <div className="flex justify-around place-items-center w-64 py-5  bg-white rounded h-11 ">
             <i className={this.cls}></i>
-            <h3> {this.props.user.name}</h3>
+            <h3 className="font-medium"> {this.props.user.name}</h3>
             <button  onClick={this.handleExpand} >
                 <i className={this.state.expandIcon}></i>
             </button>
         </div>
         {this.state.hidden == false ? 
-        <div className=" pt-6 grid grid-cols-1 justify-items-center absolute rounded mt-2 h-48 w-48 bg-gray-400">
+        <div className=" p-3 pt-6 grid grid-cols-1 justify-items-start absolute rounded mt-2 h-56 w-64 bg-white">
             <div>
+            <Link  to="/" className="text-sm">
+            <i className="fa-solid fa-plus px-4"></i>
             Ajouter une annonce
-
-            <Link  to="/">
-            
             </Link>
-
             </div>
-           
+           <div className="w-full  h-0.5 bg-black"></div>
            <div>
-           <Link  to="/">
-            Annonces
-            
+           <Link  to="/" className="text-sm">
+           <i className="fa-regular fa-window-restore px-4"></i>
+           Mes annonces
             </Link>
-                    </div>
+            </div>
+            <div className="w-full h-0.5 bg-black"></div>
            <div> 
-           <Link to="/">
-           Saved
+           <Link to="/" className="text-sm">
+           <i className="fa-regular fa-bookmark px-5"></i>
+           Annonces enrigistrées
            </Link>
            </div>
           
 
         </div> : null}
-        
+
         </div>
         
         );
