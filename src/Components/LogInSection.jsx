@@ -16,7 +16,7 @@ class LogInSection extends Component {
         <div className="flex flex-col place-items-center h-14">
         <Button bgColor="bg-blue-900 " handleClick={this.handleSubmit}>
         <i class="fa-brands fa-google px-3"></i>
-            Ajouter votre compte Google
+            Connecter à votre compte Google
           </Button>   
           <Link to="/SignUp" className="mt-5 text-blue-900 underline">Voulez vous plutot vous inscrire?</Link>
         </div>

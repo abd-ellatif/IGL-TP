@@ -1,13 +1,14 @@
 import "./App.css";
-import SignUpSection from "./Components/SignUpSection";
-import { Link } from "react-router-dom";
-import HeroPage from "./Pages/HeroPage";
+import UserCard from "./Components/UserCard";
+import UserNavBar from "./Components/UserNavBar";
+import UserPage from "./Pages/UserPage";
 
 function App() {
+  let user = { name: "Abd ellatif", icon: null };
   return (
     <div className="App">
       <header className="App-header"></header>
-      <HeroPage></HeroPage>
+      <UserPage user={user}></UserPage>
     </div>
   );
 }
