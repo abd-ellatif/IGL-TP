@@ -13,7 +13,7 @@ class UserNavBar extends Component {
                 <UserCard user={this.props.user}>
                     
                 </UserCard>
-                <Link to="/" className=" mx-10 mt-2"><i class="fa-regular fa-envelope fa-lg"></i></Link>
+                <Link to="/" className=" mx-10 mt-2"><i className="fa-regular fa-envelope fa-lg"></i></Link>
             </NavBar>
         );
     }

@@ -15,7 +15,7 @@ class UserCard extends Component {
         
         return (
         <div className="static">
-        <div className="flex justify-around place-items-center w-64 py-5  bg-white rounded h-11 ">
+        <div className="flex justify-around place-items-center w-64 py-5  bg-white rounded h-11 border-solid border-gray-300 border-2 ">
             <i className={this.cls}></i>
             <h3 className="font-medium"> {this.props.user.name}</h3>
             <button  onClick={this.handleExpand} >
@@ -23,7 +23,7 @@ class UserCard extends Component {
             </button>
         </div>
         {this.state.hidden == false ? 
-        <div className=" p-3 pt-6 grid grid-cols-1 justify-items-start absolute rounded mt-2 h-56 w-64 bg-white">
+        <div className=" p-3 pt-6 grid grid-cols-1 justify-items-start absolute rounded mt-2 h-56 w-64 bg-white shadow-lg border-solid border-gray-300 border-2">
             <div>
             <Link  to="/" className="text-sm">
             <i className="fa-solid fa-plus px-4"></i>
