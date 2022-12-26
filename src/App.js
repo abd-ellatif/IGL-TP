@@ -2,7 +2,7 @@ import "./App.css";
 import UserCard from "./Components/UserCard";
 import UserNavBar from "./Components/UserNavBar";
 import UserPage from "./Pages/UserPage";
-
+import HeroPage from './Pages/HeroPage'
 function App() {
   let user = { name: "Abd ellatif", icon: null };
   return (

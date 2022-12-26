@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import HeroSection from "./../Components/HeroSection";
-import LogInNavBar from "../Components/logInNavBar";
+import HeroSection from "./../Components/Hero";
+import LogInNavBar from "../Components/Navbarr"; 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignUpSection from "../Components/SignUpSection";
 import LogInSection from "../Components/LogInSection";

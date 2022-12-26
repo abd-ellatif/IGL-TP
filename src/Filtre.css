@@ -1,0 +1,13 @@
+.Filtre {
+    
+    background-color:white;
+}
+@media (max-width:420px) {
+    .Filtre{
+        visibility: hidden;
+    }
+}
+.FiltreMobile {
+    position: relative;
+    z-index: 1;
+}

@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-import HeroSection from "./../Components/HeroSection";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom" ;
 import UserNavBar from "../Components/UserNavBar";
-import TempFilterSection from "../Components/TempFilterSection";
+import TempFilterSection from "../Components/Filter";
 import AnnoncesContainer from "../Components/AnnoncesContainer";
 
 class UserPage extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div >
         <Router>
           <UserNavBar user={this.props.user}></UserNavBar>
-          <div className="grid grid-cols-4">
+          <div className="md:grid md:grid-cols-5 grid grid-cols-1">
             <TempFilterSection></TempFilterSection>
-            <div className="col-start-2 col-span-3">
+            <div className="md:col-start-2 md:col-span-4 col-span-1 md:mt-auto mt-[-773px] ">
               <Routes>
                 <Route
                   path="/"

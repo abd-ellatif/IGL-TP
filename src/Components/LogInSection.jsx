@@ -11,19 +11,15 @@ class LogInSection extends Component {
       }
     render() {
         return (
-        <div className="bg-gray-100 w-full h-screen flex flex-col place-items-center justify-evenly ">
-        <h1 className="text-6xl font-bold text-blue-500">Connexion</h1>  
-        <div className="flex flex-col place-items-center h-14">
-        <Button bgColor="bg-blue-900 " handleClick={this.handleSubmit}>
-        <i class="fa-brands fa-google px-3"></i>
-            Connecter à votre compte Google
-          </Button>   
-          <Link to="/SignUp" className="mt-5 text-blue-900 underline">Voulez vous plutot vous inscrire?</Link>
+        <div className="bg-gray-100 w-full h-screen flex flex-col place-items-center ">
+        <h1 className="md:text-6xl text-5xl font-bold text-[#4285f4] mt-[150px] mb-[100px]">CONNEXION</h1>  
+        <div className="flex justify-center w-[485px] h-[51px] mb-5 mx-autofont-regular text-white">
+          <Button handleClick={this.handleSubmit} bgColor="bg-[#160042]">
+            <i class="fa-brands fa-google px-3 "></i>
+              Se connecter avec Google
+          </Button> 
         </div>
-        <div>
-
-        </div>
-       
+          <h2 className='underline text-[#4285f4] font-poppins '><Link to="/SignUp">Voulez-vous plutôt vous inscrire ?</Link></h2>
         </div>
         );
     }
