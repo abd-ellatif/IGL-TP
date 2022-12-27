@@ -10,7 +10,7 @@ const DateRangePicker = () => {
     });
    
   return (
-    <div className='font-poppins font-bold space-y-3 -z-50'>
+    <div className='font-poppins font-bold space-y-3  pb-[10px]'>
         <h3 className='font-poppins text-[#160042] w-full font-bold'>Dates de publication</h3>
         <div className='left-3'>
             <Calendar 

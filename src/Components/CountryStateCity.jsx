@@ -346,8 +346,8 @@ const data = {
   };
 const CountryStateCity = () => {
     const [selectedCountry] = React.useState("Algeria");
-  const [selectedState, setSelectedState] = React.useState();
-  const [selectedCity, setSelectedCity] = React.useState();
+    const [selectedState, setSelectedState] = React.useState();
+    const [selectedCity, setSelectedCity] = React.useState();
 
   const availableState = data.countries.find((c) => c.name === selectedCountry);
   const availableCities = availableState?.states?.find(
@@ -355,16 +355,14 @@ const CountryStateCity = () => {
   );
 
   return (
-    <div className="space-y-3 font-poppins space-x-3">
-      <h3 className='font-poppins font-bold text-[#160042]'>Localisation</h3>
+    <div className="space-y-3 font-poppins ">
       <div className="text-[#160042]">
-        <label className="font-poppins font-bold text-gray-500">Wilaya</label><br></br>
+        <label className="font-poppins text-[#4285f4]">Wilaya</label><br></br>
         <select
-          className="rounded-lg w-[220px] h-[40px] border-gray-300"
+          className="rounded-lg w-[220px] h-[40px] border-gray-300 cursor-pointer"
           placeholder="State"
           value={selectedState}
           onChange={(e) => setSelectedState(e.target.value)}
-          
         >
           <option>Choisir une wilaya</option>
           {availableState?.states.map((e, key) => {
@@ -378,9 +376,9 @@ const CountryStateCity = () => {
       </div>
 
       <div className="text-[#160042]">
-        <label  className="font-poppins font-bold text-gray-500">Commune</label><br></br>
+        <label  className="font-poppins text-[#4285f4]">Commune</label><br></br>
         <select
-          className="rounded-lg w-[220px] h-[40px] border-gray-300"
+          className="rounded-lg w-[220px] h-[40px] border-gray-300 cursor-pointer"
           placeholder="City"
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
