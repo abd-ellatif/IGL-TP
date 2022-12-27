@@ -13,7 +13,7 @@ const Filter = () => {
   }
   return (
     <div class="w-full h-screen postion-absolute bg-white">
-        <div className='Filtre space-x-3 space-y-5'>
+        <div className='Filtre pl-3 space-x-3 space-y-5'>
           <p className='font-bold text-[#4285f4] font-poppins text-xl pt-2'>Filtrer</p>
           <CountryStateCity/>
           <CheckBox/>
@@ -33,4 +33,4 @@ const Filter = () => {
   )
 }
 
-export default Filter
+export default Filter;

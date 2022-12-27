@@ -1,5 +1,6 @@
 import React from 'react';
 import Typed from 'react-typed';
+import Button from './Button';
 import videoBg from '../assets/videoBg.mp4'
 import { Link } from "react-router-dom";
 
@@ -14,9 +15,10 @@ const Hero = () => {
                 className='md:text-4xl sm:text-3xl text-xl pt-1 font-semibold pl-2 text-[#83b7fc]'
                 strings={['Terrains Agricoles ','Maisons','Terrains','Bungalow']} typeSpeed={150} backSpeed={130} loop/>
             </div>
-            <button className='bg-[#4285f4] w-[245px] rounded-md mx-auto mt-10 md:ml-[36%] py-3 text-white'><Link to="/SignUp">Rejoindre</Link></button>
+            <Link to="/SignUp" className='mt-10'><Button bgColor='bg-blue-600'> Rejoindre </Button></Link>
+            
         </div>
-       <div className="absolute top-20 left-0 w-[100%] h-[100%]  bg-[#000000cc] -z-40"></div>
+       <div className="absolute top-20 left-0 w-[100%] h-[100%]  bg-black opacity-60 -z-40"></div>
        <video src={videoBg} autoPlay loop muted className='absolute w-[100%] top-20 h-[100%] object-cover -z-50'/>
     </div>
   )

@@ -15,7 +15,7 @@ class UserCard extends Component {
         
         return (
         <div className="static">
-        <div className="flex  place-items-center space-x-3 w-64 items-center border-gray-100 bg-white  h-11  ">
+        <div className="flex  justify-between space-x-3 w-64 items-center border-gray-100 bg-white  h-11 px-4 ">
             <i className={this.cls}></i>
             <h3 className="font-medium"> {this.props.user.name}</h3>
             <button  onClick={this.handleExpand} >

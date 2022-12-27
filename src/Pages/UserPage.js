@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom" ;
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserNavBar from "../Components/UserNavBar";
 import TempFilterSection from "../Components/Filter";
 import AnnoncesContainer from "../Components/AnnoncesContainer";
@@ -9,7 +8,7 @@ class UserPage extends Component {
   state = {};
   render() {
     return (
-      <div >
+      <div>
         <Router>
           <UserNavBar user={this.props.user}></UserNavBar>
           <div className="md:grid md:grid-cols-5 grid grid-cols-1">
