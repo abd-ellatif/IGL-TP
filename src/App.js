@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header> 
-      <HeroPage user={user}></HeroPage>
+      <UserPage user={user}></UserPage>
     </div>
   );
 }
