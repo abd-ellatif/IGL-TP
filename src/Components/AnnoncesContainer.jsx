@@ -19,6 +19,7 @@ class AnnoncesContainer extends Component {
                 <SearchBox searchValue={this.state.searchValue}  handleChange={this.handleValueChange} handleSearch ={this.handleSearchClicked}></SearchBox>
                 <div className="mt-10 w-8 h-8 grid grid-cols-2 bg-blue-200">
                 </div>
+                
                 </div>);
     }
 }
