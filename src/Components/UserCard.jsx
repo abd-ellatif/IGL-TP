@@ -37,11 +37,11 @@ class UserCard extends Component {
            Mes annonces
             </Link>
             </div>
-            <div className="w-full h-0.5 bg-black"></div>
+            <div className="w-full  h-0.5 bg-black"></div>
            <div> 
            <Link to="/" className="text-sm">
-           <i className="fa-regular fa-bookmark px-5"></i>
-           Annonces enrigistrées
+           <i class="fa-solid fa-arrow-right-from-bracket px-4"></i>
+           Log out
            </Link>
            </div>
           

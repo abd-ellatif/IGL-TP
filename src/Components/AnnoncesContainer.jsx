@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
+import AnnonceCard from './AnnonceCard';
+import DetailedAnnonce from './DetailedAnnonce';
 import SearchBox from './SearchBox';
+
+
+let ad = {nom : 'Apartement F3 Zeralda',
+          location: 'Zeralda',
+          prix: '60.000.000 DA'};
 
 class AnnoncesContainer extends Component {
     constructor(props) {
@@ -15,9 +22,16 @@ class AnnoncesContainer extends Component {
         alert("Search Clicked");
     }
     render() { 
-        return (<div className="flex flex-col place-items-center w-full h-screen bg-gray-100">
+        return (<div className="flex flex-col gap-4  place-items-center w-full h-screen bg-gray-100">
+              
                 <SearchBox searchValue={this.state.searchValue}  handleChange={this.handleValueChange} handleSearch ={this.handleSearchClicked}></SearchBox>
-                <div className="mt-10 w-8 h-8 grid grid-cols-2 bg-blue-200">
+               
+                <div   className=" h-screen   grid grid-cols-3 gap-8 overflow-y-auto overflow-x-auto">
+                    {
+                        this.props.annonces.map((annonce)=>{
+                            return <AnnonceCard annonce={annonce}></AnnonceCard>
+                        })
+                    }            
                 </div>
                 
                 </div>);

@@ -4,13 +4,11 @@ import Carousel from './Carousel';
 
 
 
-const DetailedAnnonce = () => {
-    const [buttonText,setButtonText]= useState('Ajouter aux favoris');
-    function handleClick(){
-        setButtonText('Ajouté ! ')
-    }
+const DetailedAnnonce = (props) => {
+
+
   return (
-            <div className='flex space-x-2 w-[1000px] h-[720px] mt-[-10px] ml-[-100px] z-50 bg-white rounded-[20px] font-poppins shadow-[10px_5px_35px_10px_rgba(9,0,0,0.2)] '>
+            <div className='flex space-x-2 w-[1000px] h-[600px] mt-[-10px] ml-[-100px] z-50 bg-white rounded-[20px] font-poppins shadow-[10px_5px_35px_10px_rgba(9,0,0,0.2)] absolute '>
                 <div>
                     <h1 class="text-[#160042] font-poppins text-[23px] pt-5 pl-6 pb-2 font-bold">Appartement F3 Zéralda</h1>
                     <h2 class="text-gray-400 pl-6 text-[14px]">Publié par <span class="text-[#4285f4] underline">Mohamed Mohamed </span></h2>
@@ -29,28 +27,24 @@ const DetailedAnnonce = () => {
                         </div>
                         
                     </div>
-                    <div class=" pl-10"><Carousel/></div>
+                    <div class=""><Carousel/></div>
                     <div className='pl-6 mt-[-20px] text-[14px]'>
                         <h3 class="text-[#4285f4] ">Type : <span class="text-[#160042]">Appartement</span></h3>
                         <h2 class="text-[#4285f4] ">Catégorie : <span class="text-[#160042]">Location</span></h2>
                         <h2 class="text-[#4285f4] ">Surface : <span class="text-[#160042]">63m²</span></h2>
                         <h2 class="text-[#4285f4] ">Adresse : <span class="text-[#160042]">Cartier Résidentiel, Zéralda, Alger</span></h2>
-                        <h2 class="text-[#4285f4] w-[100%]">Description : <span class="text-[#160042]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam ea quas, possimus vero minus dolore eaque consequuntur culpa quo aspernatur facere consequatur cumque doloribus laborum architecto necessitatibus nemo ex tenetur. doloribus laborum architecto necessitatibus nemo ex tenetur.doloribus laborum architecto necessitatibus nemo cumque doloribus laborum architecto necessitatibus nemo ex tenetur. cumque doloribus laborum architecto ex tenetur. cumque doloribus laborum architecto ex tenetur. cumque doloribus laborum </span></h2>
+                        <h2 class="text-[#4285f4] w-[100%]">Description : <span class="text-[#160042]">Lorem ipsum  fefe fefef fefefef dolor sit amet consecteturhitecto ex tenetur. cumque doloribus laborum </span></h2>
                     </div>
                     <div class=" flex space-x-[80px] pl-10 mr-5 items-center pt-6 text-[14px]">
-                        <button className='flex space-x-1 w-[200px] items-center' onClick={handleClick}>
-                            <svg xmlnsXlink="https://www.w3.org/200/svg" width="22" height="22" viewBox="0 0 24 24 " fill="none" stroke="#160042" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path fillRule="evenodd" clipRule="evenodd" d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                            <h2 class="font-bold text-[15px]] text-[#160042]">{buttonText}</h2>
-                        </button>
                     
                         <button class="bg-[#4285F4] w-[215px] h-[44px] text-[16px] rounded-md  p-3 text-white">Envoyer un message</button>
                     
                     </div>
                 </div>
-                <div class="w-[3000px] h-[720px]  border-8 border-white bg-gray-600 rounded-[20px]">
+                <div class="w-1/2 h-[600px]  border-8 border-white bg-gray-600 rounded-[20px]">
                 
-                <div className='ml-[480px] mt-[-20px] mr-[-20px]'>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#4285f4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                <div className='cursor-pointer ml-[480px] mt-[-20px] mr-[-20px]'>
+                    <svg onClick={props.handleClick} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#4285f4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
                 </div>
                 <h1 class="mt-[75%] ml-[35%] text-white underline">google map here</h1>
                 </div>

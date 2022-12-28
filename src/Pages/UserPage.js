@@ -4,6 +4,13 @@ import UserNavBar from "../Components/UserNavBar";
 import TempFilterSection from "../Components/Filter";
 import AnnoncesContainer from "../Components/AnnoncesContainer";
 
+const ad = {
+  nom: "Apartement Zeralda D3",
+  location: "Zeralda",
+  prix: "60.000.000 DA",
+};
+let list = [ad, ad, ad, ad, ad, ad, ad, ad, ad, ad, ad, ad];
+
 class UserPage extends Component {
   state = {};
   render() {
@@ -17,7 +24,9 @@ class UserPage extends Component {
               <Routes>
                 <Route
                   path="/"
-                  element={<AnnoncesContainer></AnnoncesContainer>}
+                  element={
+                    <AnnoncesContainer annonces={list}></AnnoncesContainer>
+                  }
                 ></Route>
               </Routes>
             </div>
