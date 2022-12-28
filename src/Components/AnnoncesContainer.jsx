@@ -26,7 +26,7 @@ class AnnoncesContainer extends Component {
               
                 <SearchBox searchValue={this.state.searchValue}  handleChange={this.handleValueChange} handleSearch ={this.handleSearchClicked}></SearchBox>
                
-                <div   className=" h-screen   grid grid-cols-3 gap-8 overflow-y-auto overflow-x-auto">
+                <div   className=" h-screen   flex  flex-wrap  gap-8 overflow-y-auto overflow-x-auto">
                     {
                         this.props.annonces.map((annonce)=>{
                             return <AnnonceCard annonce={annonce}></AnnonceCard>

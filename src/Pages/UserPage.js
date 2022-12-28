@@ -29,6 +29,7 @@ class UserPage extends Component {
                     <AnnoncesContainer annonces={list}></AnnoncesContainer>
                   }
                 ></Route>
+
                 <Route
                   path="/AddSection"
                   element={<AddSection></AddSection>}
