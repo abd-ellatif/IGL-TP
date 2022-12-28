@@ -76,16 +76,20 @@ class AddAnnounce extends Component {
                 <input  name="description" className=" h-[200px] md:w-[400px] lg:w-[500px] w-[300px] border-gray-200 rounded-[13px] pb-[150px]" placeholder="Saisir du texte ici ..." type="text" value={this.props.description} onChange={this.props.handleChange} />
             </div>
           </form>   
-          <div class="bg-white w-[250px] h-[200px] lg:w-[350px] lg:h-[300px] lg:mt-[100px] lg:ml-auto ml-[80px] md:ml-[150px] space-y-2 rounded-[20px] shadow-[0px_10px_35px_0px_rgba(0,0,0,0.2)] lg:col-start-4 lg:cols-span-1 ">
-                <div class="lg:mt-[80px] lg:ml-[110px] m-[15px] ml-[60px]">
-                  <img src={imgIcon} alt="pic" />
-                  <form>
-                  <h1 class="text-[#160042] underline ml-[-15px]">Importer des images</h1>
-                    <input type='file' multiple required name='image' accept='image/*' onChange={(e)=>{alert(e.target.files)}} />
-                  </form>
-                  
-                </div>
+          <div className="flex  flex-col place-items-center  bg-white w-[250px] h-[200px] lg:w-[350px] lg:h-[300px] lg:mt-[100px] lg:ml-auto ml-[80px] md:ml-[150px] space-y-2 rounded-[20px] shadow-[0px_10px_35px_0px_rgba(0,0,0,0.2)] lg:col-start-4 lg:cols-span-1 ">
+
+          <div className="flex  flex-col place-items-center  ">
+                
+                <img height="500px" width="300px"  src={imgIcon} alt="pic" />
+               
+        </div>
+        <form>
+                <h1 class="text-[#160042]">Importer des images</h1>
+                  <input type='file' multiple required name='image' accept='image/*' onChange={(e)=>{alert(e.target.files)}} />
+                </form>
+            
           </div>
+         
         </div>
       );
     }
