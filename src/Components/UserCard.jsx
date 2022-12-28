@@ -25,14 +25,14 @@ class UserCard extends Component {
         {this.state.hidden == false ? 
         <div className=" p-3 pt-6 grid grid-cols-1 justify-items-start absolute rounded mt-2 h-56 w-64 bg-white shadow-lg border-solid border-gray-300 border-2">
             <div>
-            <Link  to="/" className="text-sm">
+            <Link  to="/AddSection" className="text-sm">
             <i className="fa-solid fa-plus px-4"></i>
             Ajouter une annonce
             </Link>
             </div>
            <div className="w-full  h-0.5 bg-black"></div>
            <div>
-           <Link  to="/" className="text-sm">
+           <Link  to="/MyAds" className="text-sm">
            <i className="fa-regular fa-window-restore px-4"></i>
            Mes annonces
             </Link>

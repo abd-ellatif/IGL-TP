@@ -4,6 +4,7 @@ import UserNavBar from "../Components/UserNavBar";
 import TempFilterSection from "../Components/Filter";
 import AnnoncesContainer from "../Components/AnnoncesContainer";
 import AddSection from "../Components/AddSection";
+import MesAnnoncesContainer from "../Components/MesAnnoncesContainer";
 
 const ad = {
   nom: "Apartement Zeralda D3",
@@ -33,6 +34,14 @@ class UserPage extends Component {
                 <Route
                   path="/AddSection"
                   element={<AddSection></AddSection>}
+                ></Route>
+                <Route
+                  path="/MyAds"
+                  element={
+                    <MesAnnoncesContainer
+                      annonces={list}
+                    ></MesAnnoncesContainer>
+                  }
                 ></Route>
               </Routes>
             </div>
