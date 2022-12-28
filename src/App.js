@@ -7,7 +7,7 @@ function App() {
   let user = { name: "Abd ellatif", icon: null };
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header"></header> 
       <UserPage user={user}></UserPage>
     </div>
   );

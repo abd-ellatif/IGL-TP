@@ -5,7 +5,7 @@ const CheckBox = () => {
     
         <div class="space-y-3 ">
           <h3 className='font-poppins font-bold text-[#160042]'>Type</h3>
-          <ul class="flex space-x-10 items-center">
+          <ul class="flex space-x-10 md:space- items-center">
                 <li >
                   <div class="flex items-center ml-2">
                        <input id="default-checkbox" type="checkbox" value="" class="h-[16px] w-[16px] focus:ring-blue-500 bg-blue rounded-[4px]"/>
