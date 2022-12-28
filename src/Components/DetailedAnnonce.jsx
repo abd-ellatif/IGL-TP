@@ -26,7 +26,6 @@ const DetailedAnnonce = (props) => {
         <div className='md:mt-auto mt-[-220px] grid-cols-1 gap-6 md:grid md:grid-cols-2  md-[800px] lg:w-[1050px] md:h-full md:mt-[-10px] md:ml-[-100px] z-50 bg-white rounded-[20px] font-poppins shadow-[10px_5px_35px_10px_rgba(9,0,0,0.2)] relative z-1 w-[95%] ml-[7px]'>
                 <div className="md:col-span-1">
                     <div className='lg:ml-[1000px] md:ml-[700px] relative z-1 md:mt-auto mt-[500px] mt-2 md:mb-[-20px] mb-[-30px] '>
-                        <button><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#4285f4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></Link></button>
                     </div>
                     <h1 class="text-[#160042] font-poppins text-[23px] pt-5 pl-6 pb-2 font-bold">{titreAnnonce}</h1>
                     <h2 class="text-gray-400 pl-6 text-[14px]">Publié par <span class="text-[#4285f4] underline">{nomUtil}</span></h2>
@@ -59,7 +58,7 @@ const DetailedAnnonce = (props) => {
                     
                     </div>
                 </div>
-                <div class="w-1/2 h-[600px]  border-8 border-white bg-gray-600 rounded-[20px]">
+                <div class="w-full h-[600px]  border-8 border-white bg-gray-600 rounded-[20px]">
                 
                 <div className='cursor-pointer ml-[480px] mt-[-20px] mr-[-20px]'>
                     <svg onClick={props.handleClick} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#4285f4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
