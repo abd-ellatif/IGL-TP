@@ -40,6 +40,7 @@ class UserPage extends Component {
                   element={
                     <MesAnnoncesContainer
                       annonces={list}
+                      admin={false}
                     ></MesAnnoncesContainer>
                   }
                 ></Route>

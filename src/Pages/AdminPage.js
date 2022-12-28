@@ -29,13 +29,33 @@ class AdminPage extends Component {
                 <Route
                   path="/"
                   element={
-                    <AnnoncesContainer annonces={list}></AnnoncesContainer>
+                    <div>
+                      <AnnoncesContainer
+                        annonces={list}
+                        admin={true}
+                      ></AnnoncesContainer>
+                    </div>
                   }
                 ></Route>
 
                 <Route
                   path="/WebScraping"
                   element={<WebScrapingSection></WebScrapingSection>}
+                ></Route>
+
+                <Route
+                  path="/ReportedAds"
+                  element={
+                    <div>
+                      <h1 className="text-center font-semibold text-4xl text-blue-500 bg-gray-100 p-4">
+                        Annonces Signalés
+                      </h1>
+                      <AnnoncesContainer
+                        annonces={list}
+                        admin={true}
+                      ></AnnoncesContainer>
+                    </div>
+                  }
                 ></Route>
               </Routes>
             </div>

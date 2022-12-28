@@ -15,7 +15,7 @@ class AdminCard extends Component {
         
         return (
         <div className="static">
-        <div className="flex  justify-between space-x-3 w-64 items-center border-gray-100 bg-white  h-11 px-4 ">
+        <div className="flex  justify-between space-x-3 w-64 items-center border-gray-100 bg-white  h-11 px-4 rounded-lg">
             <i className={this.cls}></i>
             <h3 className="font-medium"> Admin </h3>
             <button  onClick={this.handleExpand} >
@@ -37,6 +37,14 @@ class AdminCard extends Component {
            Lancer Web-Scraping
             </Link>
             </div>
+
+            <div className="w-full  h-0.5 bg-black"></div>
+           <div> 
+           <Link to="/ReportedAds" className="text-sm">
+           <i class="fa-solid fa-arrow-right-from-bracket px-4"></i>
+           Annonces Signalés
+           </Link>
+           </div>
             <div className="w-full  h-0.5 bg-black"></div>
            <div> 
            <Link to="/" className="text-sm">

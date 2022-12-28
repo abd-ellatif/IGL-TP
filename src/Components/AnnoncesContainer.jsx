@@ -29,7 +29,12 @@ class AnnoncesContainer extends Component {
                 <div   className=" h-screen   flex  flex-wrap  gap-8 overflow-y-auto overflow-x-auto">
                     {
                         this.props.annonces.map((annonce)=>{
-                            return <AnnonceCard annonce={annonce}></AnnonceCard>
+                            if (this.props.admin == false) {
+                                
+                            }else {
+                                return <AnnonceCard annonce={annonce} admin={true} ></AnnonceCard>
+                            }
+                            
                         })
                     }            
                 </div>

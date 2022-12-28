@@ -21,7 +21,7 @@ function WebScrapingSection(){
             </Button>
         </form>
 
-        <div className="flex flex-col gap-4  place-items-center w-full h-full rounded  bg-gray-100">
+        <div className="flex flex-col gap-4  place-items-center w-full h-screen rounded  bg-gray-100">
                 
                 <div   className=" h-screen   flex  flex-wrap  gap-8 overflow-y-auto overflow-x-auto">
                     {
@@ -32,7 +32,8 @@ function WebScrapingSection(){
                 </div>
                 
                 </div>
-
+    
+       <Button bgColor='bg-blue-500'> Ajouter ces annonces</Button>
       
     </div>);
 }

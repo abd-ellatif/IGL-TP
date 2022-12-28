@@ -9,7 +9,7 @@ class UserNavBar extends Component {
     render() { 
         return (
            
-            <NavBar bgColor="bg-white" logo={<Link to="/"><h3>Logo</h3> </Link>}>
+            <NavBar bgColor="bg-blue-500" logo={<Link to="/"><h3 className='text-white text-3xl font-semibold'>.Logo</h3> </Link>}>
                 <UserCard user={this.props.user}>
                 </UserCard>
                 <Link to="/" className=" mx-5 mt-[10.5px]"><i className="fa-regular fa-envelope fa-lg"></i></Link>
