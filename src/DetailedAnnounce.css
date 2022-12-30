@@ -1,0 +1,32 @@
+
+@media (max-width:639px) {
+    .DetailedAnnounce {
+        margin-top: -100%;
+    }
+}
+@media (min-width:1024px) {
+    .DetailedAnnounce {
+        margin-left : -20%;
+    }
+    
+}
+@media (max-width : 639px) {
+    .List {
+        visibility: hidden;
+    }
+}
+.fa-chevron-down{
+    color:#160042;
+}
+.fa-circle-user {
+    color:#160042;
+}
+.fa-envelope {
+    color: #160042;
+}
+.Messagerie{
+    background-image: url('./assets/bg-msg.png');
+    background-position: center;
+    background-size: cover;
+    
+}

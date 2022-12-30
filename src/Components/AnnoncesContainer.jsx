@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AnnonceCard from './AnnonceCard';
 import DetailedAnnonce from './DetailedAnnonce';
 import SearchBox from './SearchBox';
-
+import TempFilterSection from './Filter.jsx'
 
 let ad = {nom : 'Apartement F3 Zeralda',
           location: 'Zeralda',
@@ -22,24 +22,25 @@ class AnnoncesContainer extends Component {
         alert("Search Clicked");
     }
     render() { 
-        return (<div className="flex flex-col gap-4  place-items-center w-full h-screen bg-gray-100">
-              
+        return (
+            <div className="lg:grid lg:grid-cols-5 md:grid md:grid-cols-3 h-full">
+                <TempFilterSection></TempFilterSection>
+            <div className="lg:col-start-2 lg:col-span-4 md:col-start-2 md:col-span-2 flex flex-col gap-4  place-items-center w-full h-screen bg-[#f1f1f1] pl-[1%]">
                 <SearchBox searchValue={this.state.searchValue}  handleChange={this.handleValueChange} handleSearch ={this.handleSearchClicked}></SearchBox>
                
-                <div   className=" h-screen   flex  flex-wrap  gap-8 overflow-y-auto overflow-x-auto">
+                <div   className=" h-screen   flex  flex-wrap  gap-5  overflow-y-auto overflow-x-auto">
                     {
                         this.props.annonces.map((annonce)=>{
-                            if (this.props.admin == false) {
-                                
+                            if (this.props.admin === false) {
+                                return <AnnonceCard annonce={annonce} admin={false} ></AnnonceCard>
                             }else {
                                 return <AnnonceCard annonce={annonce} admin={true} ></AnnonceCard>
                             }
-                            
-                        })
+                        }) 
                     }            
                 </div>
-                
-                </div>);
+                </div>
+            </div>);
     }
 }
 export default AnnoncesContainer;

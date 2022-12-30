@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UserNavBar from "../Components/UserNavBar";
-import TempFilterSection from "../Components/Filter";
 import AnnoncesContainer from "../Components/AnnoncesContainer";
 import AddSection from "../Components/AddSection";
 import MesAnnoncesContainer from "../Components/MesAnnoncesContainer";
+import Messagerie from "../Components/Messagerie";
+
 
 const ad = {
-  nom: "Apartement Zeralda D3",
+  nom: "Villa Zeralda centre",
   location: "Zeralda",
   prix: "60.000.000 DA",
 };
 let list = [ad, ad, ad, ad, ad, ad, ad, ad, ad, ad, ad, ad];
+
+const personne = {
+  nomUtil: "Nesrine Moukebel",
+  num: "+213123456789",
+  adresse: "Rue N°5, Wilaya, Algérie",
+  mail:"kn_moukebel@esi.dz",
+};
+let list2 = [personne,personne,personne,personne,personne];
 
 class UserPage extends Component {
   state = {};
@@ -20,14 +29,11 @@ class UserPage extends Component {
       <div>
         <Router>
           <UserNavBar user={this.props.user}></UserNavBar>
-          <div className="lg:grid lg:grid-cols-5 md:grid md:grid-cols-3 ">
-            <TempFilterSection></TempFilterSection>
-            <div className="lg:col-start-2 lg:col-span-4 md:col-start-2 md:col-span-2 ">
               <Routes>
                 <Route
                   path="/"
                   element={
-                    <AnnoncesContainer annonces={list}></AnnoncesContainer>
+                    <AnnoncesContainer annonces={list} admin={false} ></AnnoncesContainer>
                   }
                 ></Route>
 
@@ -40,13 +46,17 @@ class UserPage extends Component {
                   element={
                     <MesAnnoncesContainer
                       annonces={list}
-                      admin={false}
+                      admin={true}
                     ></MesAnnoncesContainer>
                   }
                 ></Route>
+                <Route
+                  path="/Messagerie"
+                  element={
+                    <Messagerie persons={list2} ></Messagerie>
+                  }
+                ></Route>
               </Routes>
-            </div>
-          </div>
         </Router>
       </div>
     );

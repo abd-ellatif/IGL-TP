@@ -9,7 +9,7 @@ import AdminNavBar from "../Components/AdminNavBar";
 import WebScrapingSection from "../Components/WebScrapingSection";
 
 const ad = {
-  nom: "Apartement Zeralda D3",
+  nom: "Villa Zéralda Centre",
   location: "Zeralda",
   prix: "60.000.000 DA",
 };
@@ -22,9 +22,6 @@ class AdminPage extends Component {
       <div>
         <Router>
           <AdminNavBar></AdminNavBar>
-          <div className="lg:grid lg:grid-cols-5 md:grid md:grid-cols-3 ">
-            <TempFilterSection></TempFilterSection>
-            <div className="lg:col-start-2 lg:col-span-4 md:col-start-2 md:col-span-2 ">
               <Routes>
                 <Route
                   path="/"
@@ -48,7 +45,7 @@ class AdminPage extends Component {
                   element={
                     <div>
                       <h1 className="text-center font-semibold text-4xl text-blue-500 bg-gray-100 p-4">
-                        Annonces Signalés
+                        Annonces Signalées
                       </h1>
                       <AnnoncesContainer
                         annonces={list}
@@ -58,8 +55,6 @@ class AdminPage extends Component {
                   }
                 ></Route>
               </Routes>
-            </div>
-          </div>
         </Router>
       </div>
     );

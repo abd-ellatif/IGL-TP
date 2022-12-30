@@ -18,7 +18,7 @@ const Hero = () => {
             <Link to="/SignUp" className='mt-10'><Button bgColor='bg-blue-600'> Rejoindre </Button></Link>
             
         </div>
-       <div className="absolute top-20 left-0 w-[100%] h-[100%]  bg-black opacity-60 -z-40"></div>
+       <div className="absolute top-20 left-0 w-[100%] h-[100%]  bg-[#000000aa] -z-40"></div>
        <video src={videoBg} autoPlay loop muted className='absolute w-[100%] top-20 h-[100%] object-cover -z-50'/>
     </div>
   )

@@ -2,7 +2,7 @@
 import React , {useState} from 'react'
 import Carousel from './Carousel';
 import { Link } from 'react-router-dom';
-
+import '../DetailedAnnounce.css'
 
 const DetailedAnnonce = (props) => {
     const [buttonText,setButtonText]= useState('Ajouter aux favoris');
@@ -21,11 +21,11 @@ const DetailedAnnonce = (props) => {
     const[mailUtil]=useState('mail_mail08@gmail.com');
     const[description]=useState('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet voluptate eaque distinctio assumenda labore porro, fugit aliquam repellendus consequuntur, veniam quidem beatae voluptatibus aliquid blanditiis? Maxime, hic velit.'); 
   return (
-
-        
-        <div className='md:mt-auto mt-[-220px] grid-cols-1 gap-6 md:grid md:grid-cols-2  md-[800px] lg:w-[1050px] md:h-full md:mt-[-10px] md:ml-[-100px] z-50 bg-white rounded-[20px] font-poppins shadow-[10px_5px_35px_10px_rgba(9,0,0,0.2)] relative z-1 w-[95%] ml-[7px]'>
+    <div>
+        <div className='DetailedAnnounce lg:ml-[-23%] grid-cols-1 gap-6 md:grid md:grid-cols-2  md-[800px] lg:w-[1000px] md:h-full md:mt-[-10px] md:ml-[-22%] z-50 bg-white rounded-[20px] font-poppins shadow-[10px_5px_35px_10px_rgba(9,0,0,0.2)] relative z-1 w-[110%] sm:mt-[-90%] ml-[-25%]'>
                 <div className="md:col-span-1">
-                    <div className='lg:ml-[1000px] md:ml-[700px] relative z-1 md:mt-auto mt-[500px] mt-2 md:mb-[-20px] mb-[-30px] '>
+                    <div className='lg:ml-[960px] md:ml-[200%] relative z-1 md:mt-auto mt-[500px] mt-2 md:mb-[-20px] mb-[-30px] cursor-pointer'>
+                        <svg onClick={props.handleClick} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#4285f4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
                     </div>
                     <h1 class="text-[#160042] font-poppins text-[23px] pt-5 pl-6 pb-2 font-bold">{titreAnnonce}</h1>
                     <h2 class="text-gray-400 pl-6 text-[14px]">Publié par <span class="text-[#4285f4] underline">{nomUtil}</span></h2>
@@ -44,35 +44,28 @@ const DetailedAnnonce = (props) => {
                         </div>
                         
                     </div>
-                    <div class=""><Carousel/></div>
+                    <div class=" pl-10"><Carousel/></div>
                     <div className='pl-6 mt-[-20px] text-[14px]'>
-                        <h3 class="text-[#4285f4] ">Type : <span class="text-[#160042]">Appartement</span></h3>
-                        <h2 class="text-[#4285f4] ">Catégorie : <span class="text-[#160042]">Location</span></h2>
-                        <h2 class="text-[#4285f4] ">Surface : <span class="text-[#160042]">63m²</span></h2>
-                        <h2 class="text-[#4285f4] ">Adresse : <span class="text-[#160042]">Cartier Résidentiel, Zéralda, Alger</span></h2>
-                        <h2 class="text-[#4285f4] w-[100%]">Description : <span class="text-[#160042]">Lorem ipsum  fefe fefef fefefef dolor sit amet consecteturhitecto ex tenetur. cumque doloribus laborum </span></h2>
+                        <h3 class="text-[#4285f4] ">Type : <span class="text-[#160042]">{typeAnnonce}</span></h3>
+                        <h2 class="text-[#4285f4] ">Catégorie : <span class="text-[#160042]">{categorie}</span></h2>
+                        <h2 class="text-[#4285f4] ">Surface : <span class="text-[#160042]">{surface}</span></h2>
+                        <h2 class="text-[#4285f4] ">Adresse : <span class="text-[#160042]">{adresse}</span></h2>
+                        <h2 class="text-[#4285f4] mb-2 ">Description : <span class="text-[#160042]">{description}</span></h2>
                     </div>
-                    <div class=" flex space-x-[80px] pl-10 mr-5 items-center pt-6 text-[14px]">
-                    
-                        <button class="bg-[#4285F4] w-[215px] h-[44px] text-[16px] rounded-md  p-3 text-white">Envoyer un message</button>
-                    
-                    </div>
+                   
+                        
+                        {!props.admin ? <button class="bg-[#4285F4] m-5 lg:w-[215px] lg:ml-[55%] lg:h-[44px] w-[280px] h-[44px] text-center lg:text-[16px] text-[12px] rounded-md  p-3 text-white">Envoyer un message</button>: null}
                 </div>
-                <div class="w-full h-[600px]  border-8 border-white bg-gray-600 rounded-[20px]">
-                
-                <div className='cursor-pointer ml-[480px] mt-[-20px] mr-[-20px]'>
-                    <svg onClick={props.handleClick} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#4285f4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                <div class=" h-[500px] md:h-full  border-8 border-white md:col-span-1 bg-gray-600 rounded-[20px]">          
+                    <h1 class="mt-[75%] ml-[35%] text-white underline">google map here</h1>
                 </div>
                 
-         
-           </div>
-           
-           </div>
-
+            </div>
+    </div>
             
         
     
   )
 }
 
-export default DetailedAnnonce;
+export default DetailedAnnonce

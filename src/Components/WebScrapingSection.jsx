@@ -10,14 +10,14 @@ function WebScrapingSection(){
         alert("Search Clicked");
     }
     return(<div className='flex flex-col place-items-center gap-20 justif-between p-20 '>
-        <h1 className='text-4xl font-semibold text-blue-500 '>
-            Web Scraping
+        <h1 className='text-[25px] md:text-5xl font-semibold text-[#160042] '>
+         💻 WEB  <span className='text-[25px] md:text-5xl font-semibold text-[#4285f4]  '>SCRAPING</span>
         </h1>
 
-        <form>
-            <input className="rounded-lg" type="text" placeholder="Enter URL" />
+        <form class="md:space-y-0 space-y-[20px]">
+            <input className="rounded-lg border-gray-300" type="text" placeholder="Entrer URL" />
             <Button bgColor='bg-blue-500' handleClick={handleSearch}>
-                Rechercher annonces immobilières
+                Rechercher des annonces
             </Button>
         </form>
 

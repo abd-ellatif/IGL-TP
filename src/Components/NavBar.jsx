@@ -6,7 +6,7 @@ class NavBar extends Component {
 
     
     render() { 
-        let classList = "w-full h-20 p-5 flex sticky top-0 justify-between shadow-md"
+        let classList = "w-full h-[60px] p-5 flex sticky top-0 justify-between items-center shadow-md"
          classList += " "+this.props.bgColor;
         return (<nav className={classList} >
             <div className="mt-1">
@@ -15,9 +15,9 @@ class NavBar extends Component {
             <div className="flex flex-row-reverse">
             {this.props.children}
             </div>
-            
         </nav>);
     }
 }
  
 export default NavBar;
+

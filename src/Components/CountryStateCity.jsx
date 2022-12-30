@@ -357,9 +357,9 @@ const CountryStateCity = () => {
   return (
     <div className="space-y-3 font-poppins ">
       <div className="text-[#160042]">
-        <label className="font-poppins text-[#4285f4]">Wilaya</label><br></br>
+        <label className="font-poppins text-[#4285f4] text-sm">Wilaya</label><br></br>
         <select
-          className="rounded-lg w-[220px] h-[40px] border-gray-300 cursor-pointer"
+          className="rounded-lg w-[220px] h-[40px] border-gray-200 cursor-pointer text-sm text-gray-500"
           placeholder="State"
           value={selectedState}
           onChange={(e) => setSelectedState(e.target.value)}
@@ -376,9 +376,9 @@ const CountryStateCity = () => {
       </div>
 
       <div className="text-[#160042]">
-        <label  className="font-poppins text-[#4285f4]">Commune</label><br></br>
+        <label  className="font-poppins text-[#4285f4] text-sm">Commune</label><br></br>
         <select
-          className="rounded-lg w-[220px] h-[40px] border-gray-300 cursor-pointer"
+          className="rounded-lg w-[220px] h-[40px] border-gray-200 cursor-pointer text-sm text-gray-500"
           placeholder="City"
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}

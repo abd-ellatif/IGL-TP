@@ -4,7 +4,7 @@ const CheckBox = () => {
   return (
     
         <div class="space-y-3 ">
-          <h3 className='font-poppins font-bold text-[#160042]'>Type</h3>
+          <h3 className='font-poppins font-medium text-[#160042]'>Type</h3>
           <ul class="flex space-x-10 md:space- items-center">
                 <li >
                   <div class="flex items-center ml-2">

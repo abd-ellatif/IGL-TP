@@ -1,3 +1,4 @@
+import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
 import React, { Component } from 'react'
 import {useState} from 'react'
 import imgIcon from '../assets/AddImage.svg'
@@ -18,11 +19,12 @@ class AddAnnounce extends Component {
     this.setState(this.state.images.push(e.target.value));
     alert("current state " + this.state.images);
   }
-
+    typeBien = [{label:"Appartement",value:"appartement",},{label:"Maison",value:"Maison",},{label:"Bungalow",value:"Bungalow",},{label:"Terrain",value:"Terrain",},{label:"Terrain Agricole",value:"Terrain Agricole",},];
+    catBien = [{label:"Location",value:"Location",},{label:"Location pour vacances",value:"Location pour vacances",},{label:"Vente",value:"Vente",},{label:"Echange",value:"Echange",}];
 
     render() {
       return (
-        <div className='lg:grid lg:grid-cols-5 lg:h-full lg:gap-0 grid grid-cols-1  ' >
+        <div className='lg:grid lg:grid-cols-5 lg:h-full lg:gap-0 grid grid-cols-1 lg:ml-[10%] ' >
           <form className="p-10 ml-5 lg:cols-span-4 cols-span-1 lg:space-y-0 space-y-3 lg:ml-0 md:ml-[-10px]" onSubmit={this.handleSubmit}>
             <label className="text-[#4285f4] md:cols-span-4 ">
                 <h1>Titre</h1>
@@ -31,31 +33,22 @@ class AddAnnounce extends Component {
             <div className='md:flex md:justify-between md:space-x-4 md:pt-5 md:space-y-0 space-y-3'>
               <div className='text-[#4285f4] '>
                   <h1>Catégorie</h1>
-                  <form>
-                  <input name ="categorie" className='lg:w-[250px] md:w-[200px] w-[200px] h-[45px] rounded-[13px] border-gray-200' placeholder="La catégorie..." type="text" value={this.props.categorie} onChange={this.props.handleChange} list='categories'/>
-                  <datalist id='categories'>
-                    <option  value="Vente"></option>
-                    <option  value="Echange"></option>
-                    <option  value="Location"></option>
-                    <option  value="Location pour vacances"></option>
-                  </datalist>
-
-                  </form>
+                  <select className='lg:w-[250px] md:w-[200px] w-[200px] h-[45px] rounded-[13px] border-gray-200 text-gray-500'>
+                    <option>La catégorie...</option>
+                    {this.catBien.map((catBien) => (
+                      <option value={catBien.value} onChange={this.props.handleChange}>{catBien.label}</option>
+                    ))}
+                  </select>
                   
               </div>
               <div className='text-[#4285f4]'>
                   <h1>Type</h1>
-                  <form>
-                  <input name="type" className='lg:w-[250px] md:w-[200px] w-[200px] h-[45px] rounded-[13px] border-gray-200' placeholder="Le type..." type="text" value={this.props.type} onChange={this.props.handleChange} list='types'/>
-                  <datalist id='types'>
-                    <option value="Terrain"></option>
-                    <option value="Terrain Agricole"></option>
-                    <option value="Appartement"></option>
-                    <option value="Maison"></option>
-                    <option value="Bungalow"></option>
-                  </datalist>
-                  </form>
-                  
+                  <select className='lg:w-[250px] md:w-[200px] w-[200px] h-[45px] rounded-[13px] border-gray-200 text-gray-500'>
+                    <option>Le type...</option>
+                    {this.typeBien.map((typeBien) => (
+                      <option value={typeBien.value} onChange={this.props.handleChange}>{typeBien.label}</option>
+                    ))}
+                  </select>
               </div>
             </div>
             <div className='md:flex md:justify-between md:space-x-4 md:pt-5 md:space-y-0 space-y-3'>
@@ -76,17 +69,10 @@ class AddAnnounce extends Component {
                 <input  name="description" className=" h-[200px] md:w-[400px] lg:w-[500px] w-[300px] border-gray-200 rounded-[13px] pb-[150px]" placeholder="Saisir du texte ici ..." type="text" value={this.props.description} onChange={this.props.handleChange} />
             </div>
           </form>   
-          <div className="flex  flex-col place-items-center  bg-white w-[250px] h-[200px] lg:w-[350px] lg:h-[300px] lg:mt-[100px] lg:ml-auto ml-[80px] md:ml-[150px] space-y-2 rounded-[20px] shadow-[0px_10px_35px_0px_rgba(0,0,0,0.2)] lg:col-start-4 lg:cols-span-1 ">
-
-          <div className="flex  flex-col place-items-center  ">
-                
-                <img height="500px" width="300px"  src={imgIcon} alt="pic" />
-               
-        </div>
-        <form>
-                <h1 class="text-[#160042]">Importer des images</h1>
-                  <input type='file' multiple required name='image' accept='image/*' onChange={(e)=>{alert(e.target.files)}} />
-                </form>
+          <div className="flex  flex-col place-items-center  bg-white w-[250px] h-[200px] lg:w-[350px] lg:h-[300px] lg:mt-[100px] lg:ml-auto ml-[80px] md:ml-[100px] space-y-2 rounded-[20px] shadow-[0px_10px_35px_0px_rgba(0,0,0,0.2)] lg:col-start-4 lg:cols-span-1 ">
+              <img src={imgIcon} alt="pic" class="lg:h-[400px] lg:w-[200px] h-[150px] w-[100px]" />
+              <label for="image" className='cursor-pointer  text-[#160042] underline '>Importer des images</label>
+              <input type='file' multiple required name='image' id="image" accept='image/*' style={{visibility:'hidden'}} onChange={(e)=>{alert(e.target.files)}} />  
             
           </div>
          
