@@ -6,9 +6,14 @@ import '../DetailedAnnounce.css'
 
 const DetailedAnnonce = (props) => {
     const [buttonText,setButtonText]= useState('Ajouter aux favoris');
+    const [iconCol,setIconCol]= useState("none");
+    const [iconStroke,setIconStroke]= useState("#160042");
     function handleClick(){
-        setButtonText('Ajouté ! ')
+        setButtonText('Ajouté')
+        setIconCol("#F4B400")
+        setIconStroke("#F4B400")
     }
+    
     //const[setDescription,setType,setCat,setSurface,setAdresse,setUtil,setAdrUtil,setTitre,setNomUtil,setNulTel,setMail] = useState();
     const[typeAnnonce] = useState('Appartement');
     const[categorie]=useState('Location');
@@ -54,7 +59,18 @@ const DetailedAnnonce = (props) => {
                     </div>
                    
                         
-                        {!props.admin ? <button class="bg-[#4285F4] m-5 lg:w-[215px] lg:ml-[55%] lg:h-[44px] w-[280px] h-[44px] text-center lg:text-[16px] text-[12px] rounded-md  p-3 text-white">Envoyer un message</button>: null}
+                        {!props.admin ? <div class=" flex space-x-[60px] pl-10 mr-5 items-center pt-6 text-[14px] pb-[20px]">
+                        {!props.saved ?<button className='flex space-x-1 w-[200px] items-center' onClick={handleClick}>
+                             <svg xmlnsXlink="https://www.w3.org/200/svg" width="22" height="22" viewBox="0 0 24 24 " fill={iconCol} stroke={iconStroke} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path fillRule="evenodd" clipRule="evenodd" d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg> 
+                            <h2 class="font-bold text-[13px] text-[#160042]">{buttonText}</h2>
+                        </button> : <button className='flex space-x-1 w-[200px] items-center' >
+                             <svg xmlnsXlink="https://www.w3.org/200/svg" width="22" height="22" viewBox="0 0 24 24 " fill="#F4B400" stroke="#F4B400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path fillRule="evenodd" clipRule="evenodd" d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg> 
+                            
+                        </button>}
+                    
+                        <button class="bg-[#4285F4] w-[215px] h-[44px] text-[16px] rounded-md  p-3 text-white">Envoyer un message</button>
+                    
+                    </div>: null}
                 </div>
                 <div class=" h-[500px] md:h-full  border-8 border-white md:col-span-1 bg-gray-600 rounded-[20px]">          
                     <h1 class="mt-[75%] ml-[35%] text-white underline">google map here</h1>

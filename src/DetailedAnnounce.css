@@ -10,11 +10,12 @@
     }
     
 }
-@media (max-width : 639px) {
+@media (max-width : 767px) {
     .List {
         visibility: hidden;
     }
 }
+
 .fa-chevron-down{
     color:#160042;
 }

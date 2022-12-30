@@ -15,7 +15,7 @@ class AdminCard extends Component {
         
         return (
         <div className="static">
-        <div onClick={this.handleExpand}  className="flex  justify-between cursor-pointer space-x-3 md:w-64 w-50 items-center  h-11 px-4 md:px-[20%] ">
+        <div onClick={this.handleExpand}  className="flex  justify-between cursor-pointer space-x-3 md:w-64 w-50 items-center text-white h-11 px-4 md:px-[20%] ">
             <i className={this.cls}></i>
             <h3 className="font-medium text-white"> Admin </h3>
             <button  >

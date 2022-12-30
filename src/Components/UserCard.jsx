@@ -40,10 +40,17 @@ class UserCard extends Component {
             </Link>
             </div>
             <div className="w-full  h-0.5 bg-black"></div>
+            <div>
+           <Link  to="/Saved" className="md:text-sm text-[11px] hover:text-[#4285f4]">
+           <i className="fa-regular fa-bookmark md:px-4 px-2"></i>
+           Annonces enregistrées 
+            </Link>
+            </div>
+            <div className="w-full  h-0.5 bg-black"></div>
            <div> 
            <Link to="/" className="md:text-sm text-[11px] hover:text-[#4285f4]">
            <i class="fa-solid fa-arrow-right-from-bracket md:px-4 px-2"></i>
-           Log out
+           Se déconnecter
            </Link>
            </div>
           

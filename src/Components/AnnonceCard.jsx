@@ -29,8 +29,9 @@ function AnnonceCard(props) {
 
     </div>
     {props.admin ? <Button bgColor='bg-blue-500' > Supprimer </Button>: null}
-    <div className="absolute top-20 left-1/4">
-    {popUpActive ? <DetailedAnnonce handleClick = {handleClick} admin={props.admin}></DetailedAnnonce> : null}
+    {props.saved ? <Button bgColor='bg-[#160042]' > Supprimer des favoris</Button>: null}
+    <div className="absolute top-20 left-1/4"> 
+    {popUpActive ? <DetailedAnnonce handleClick = {handleClick} admin={props.admin} saved={props.saved}></DetailedAnnonce> : null}
     </div> 
     
    

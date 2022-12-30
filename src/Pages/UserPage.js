@@ -5,7 +5,7 @@ import AnnoncesContainer from "../Components/AnnoncesContainer";
 import AddSection from "../Components/AddSection";
 import MesAnnoncesContainer from "../Components/MesAnnoncesContainer";
 import Messagerie from "../Components/Messagerie";
-
+import SavedAnnounceContainer from "../Components/SavedAnnounceContainer";
 
 const ad = {
   nom: "Villa Zeralda centre",
@@ -54,6 +54,12 @@ class UserPage extends Component {
                   path="/Messagerie"
                   element={
                     <Messagerie persons={list2} ></Messagerie>
+                  }
+                ></Route>
+                <Route
+                  path="/Saved"
+                  element = {
+                      <SavedAnnounceContainer annonces={list} saved={true} ></SavedAnnounceContainer>
                   }
                 ></Route>
               </Routes>

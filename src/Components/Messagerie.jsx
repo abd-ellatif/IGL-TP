@@ -65,10 +65,10 @@ function Messagerie(props) {
                         ))}
                     </ul>
                 </div> 
-               <div className='block md:hidden mt-[-500px]' onClick={handleReadMsg}>
-                  {read ? <span class="text-[30px]"><i  class="fa-regular fa-circle-right"></i></span> : null} 
+               <div className='block md:hidden mt-[-500px] cursor-pointer' onClick={handleReadMsg}>
+                  {read ? <span class="text-[30px] "><i  class="fa-regular fa-circle-right"></i></span> : null} 
                 </div>
-                 <div class= {!read ? " md:hidden bg-[#fff] border-r-2 border-gray-100 " : "md:hidden fixed left-[-100%]"}>
+                 <div class= {!read ? "md:hidden bg-[#fff] border-r-2 border-gray-100 " : "md:hidden fixed left-[-100%]"}>
                     <h1 class="text-[18px] text-[#160042] font-medium ml-8 mt-[20px]">Messagerie 👋🏻</h1>
                     <ul id="List" class="ml-[10%] space-y-3 pt-[20px]">
                         <div className='w-[90%] bg-gray-100 h-0.5 mt-3 mb-3 '></div>
