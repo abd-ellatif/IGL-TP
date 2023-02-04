@@ -27,6 +27,30 @@ class AnnoncesContainer extends Component {
 
     handleValueChange = (event) =>{
         this.setState({searchValue: event.target.value});
+        console.log('State of search: '+this.state.searchValue)
+
+        // Declare variables
+        var filter, ul, li, i, txtValue;
+     
+        filter = document.getElementById("searchBox").value.toUpperCase();
+        ul = document.getElementById("AisUl");
+        li = ul.getElementsByTagName('li');
+      
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+          txtValue = this.state.list[i].titre;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+
+        if(this.state.searchValue =''){
+            for (i = 0; i < li.length; i++) {
+                  li[i].style.display = "";        
+              }
+        }
     }
 
 
@@ -60,6 +84,9 @@ class AnnoncesContainer extends Component {
 
         this.setState({list : this.state.list})
     }
+    handleSearchChanged = () => {
+        
+      }
 
     render() { 
         return (
@@ -67,21 +94,26 @@ class AnnoncesContainer extends Component {
                 <FilterSection handleFilterChange={this.handleFilterChange} handleFilterClick={this.handleFilterClick}></FilterSection>
                 
             <div className="lg:col-start-2 lg:col-span-4 md:col-start-2 md:col-span-2 flex flex-col gap-4  place-items-center w-full h-screen bg-[#f1f1f1] pl-[1%]">
-                <SearchBox searchValue={this.state.searchValue}  handleChange={this.handleValueChange} handleSearch ={this.handleSearchClicked}></SearchBox>
+                <SearchBox searchValue={this.state.searchValue}  handleChange={this.handleValueChange} handleSearch ={this.handleSearchClicked} ></SearchBox>
                
                 <div   className=" h-screen   flex  flex-wrap  gap-5  overflow-y-auto overflow-x-auto">
+                    <ul id='AisUl' className=" h-screen   flex  flex-wrap  gap-5  overflow-y-auto overflow-x-auto">
+
                     {
                         this.state.list.map((annonce)=>{
 
 
                                 if (this.props.admin === false) {
-                                    return <AnnonceCard annonce={annonce} admin={false} user={this.props.user}></AnnonceCard>
+                                    return <li> <AnnonceCard annonce={annonce} admin={false} user={this.props.user}></AnnonceCard> </li>
                                 }else {
-                                    return <AnnonceCard annonce={annonce} admin={true} ></AnnonceCard>
+                                    return <li> <AnnonceCard annonce={annonce} admin={true} ></AnnonceCard> </li>
                                 }
                             
                         })
                     }            
+
+                    </ul>
+                   
                 </div>
                 </div>
             </div>);

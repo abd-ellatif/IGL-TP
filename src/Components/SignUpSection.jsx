@@ -33,9 +33,6 @@ class SignUpSection extends Component {
     
     handleSubmit(response) {
       let profile_obj = jwt_decode(response.credential)
-      alert(profile_obj.email)
-
-
       fetch('http://127.0.0.1:8000/signup',{method:'POST',body:JSON.stringify({nom:this.state.nom,
       prenom:this.state.prenom,
       adresse:this.state.adresse,
@@ -43,7 +40,7 @@ class SignUpSection extends Component {
       telephone:this.state.telephone}),headers:{'Content-type': 'application/json; charset=UTF-8'}})
       .then((response) => response.json())
       .then((data) => {
-          console.log(data)
+         alert('Utilisateur Ajouté ! Vous pouvez maintenant vous connecter')
       })
       .catch((err) => {
          console.log(err.message);
