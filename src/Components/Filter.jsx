@@ -14,7 +14,7 @@ const Filter = (props) => {
   return (
     <div className="  w-full bg-white border-r-2 border-gray-200 md:shadow-lg">
         <div className='Filtre space-x-3 space-y-5 '>
-          <p className='font-bold text-[#4285f4] font-poppins text-xl pt-5 ml-3'>Filtrer 🏡</p>
+          <button className='font-bold text-[#4285f4] font-poppins text-xl pt-5 ml-3' onClick={props.handleFilterClick}>Filtrer 🏡</button>
           <h3 className='font-poppins text-[#160042] font-medium'>Localisation</h3>
           <CountryStateCity handleFilterChange={props.handleFilterChange}/>
           <CheckBox/>

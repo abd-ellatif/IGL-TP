@@ -4,6 +4,7 @@ import Carousel from './Carousel';
 import { Link } from 'react-router-dom';
 import '../DetailedAnnounce.css'
 import { useEffect } from 'react';
+import Map from './Map';
 
 const DetailedAnnonce = (props) => {
     const [message,setMessage] = useState('')
@@ -109,8 +110,8 @@ const DetailedAnnonce = (props) => {
                     
                     </div>: null}
                 </div>
-                <div className=" h-[500px] md:h-full  border-8 border-white md:col-span-1 bg-gray-600 rounded-[20px]">          
-                    <h1 className="mt-[75%] ml-[35%] text-white underline">google map here</h1>
+                <div className=" h-[500px] md:h-full  border-8 border-white md:col-span-1  rounded-[20px]">          
+                    <Map location={props.annonce.location.split('-')[1]}> </Map>
                 </div>
 
                 {(props.user.id == props.annonce.owner)? null :  <input className='p-4 rounded-lg' name='Message' placeholder='Ecrire le message ici' onChange={handleMsgChange}></input>}
