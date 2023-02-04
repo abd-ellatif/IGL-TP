@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Button from './Button';
+import {GoogleLogin} from 'react-google-login';
+const client_id = '624611719020-654bfvtdlndbc01o46ftpilvlbtv8q7q.apps.googleusercontent.com'
 
 
 class SignUpForm extends Component {
@@ -28,10 +30,7 @@ class SignUpForm extends Component {
                     
         </form>   
         <div className="flex justify-center w-[485px] h-[51px]  mx-auto font-regular text-white">
-          <Button handleClick={this.props.handleSubmit} bgColor="bg-[#160042]">
-            <i class="fa-brands fa-google px-3 "></i>
-              Ajouter votre compte Google
-          </Button> 
+
         </div>
         </div>
       );

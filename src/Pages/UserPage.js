@@ -7,63 +7,60 @@ import MesAnnoncesContainer from "../Components/MesAnnoncesContainer";
 import Messagerie from "../Components/Messagerie";
 import SavedAnnounceContainer from "../Components/SavedAnnounceContainer";
 
-const ad = {
-  nom: "Villa Zeralda centre",
-  location: "Zeralda",
-  prix: "60.000.000 DA",
-};
-let list = [ad, ad, ad, ad, ad, ad, ad, ad, ad, ad, ad, ad];
-
 const personne = {
   nomUtil: "Nesrine Moukebel",
   num: "+213123456789",
   adresse: "Rue N°5, Wilaya, Algérie",
-  mail:"kn_moukebel@esi.dz",
+  mail: "kn_moukebel@esi.dz",
 };
-let list2 = [personne,personne,personne,personne,personne];
+let list2 = [personne, personne, personne, personne, personne];
 
 class UserPage extends Component {
   state = {};
+
+  componentDidMount() {
+    console.log(this.props.user);
+  }
+
   render() {
     return (
       <div>
-        <Router>
-          <UserNavBar user={this.props.user}></UserNavBar>
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <AnnoncesContainer annonces={list} admin={false} ></AnnoncesContainer>
-                  }
-                ></Route>
+        <UserNavBar user={this.props.user}></UserNavBar>
+        <Routes>
+          <Route
+            path=""
+            element={
+              <AnnoncesContainer
+                user={this.props.user}
+                admin={false}
+              ></AnnoncesContainer>
+            }
+          ></Route>
 
-                <Route
-                  path="/AddSection"
-                  element={<AddSection></AddSection>}
-                ></Route>
-                <Route
-                  path="/MyAds"
-                  element={
-                    <MesAnnoncesContainer
-                      annonces={list}
-                      admin={true}
-                    ></MesAnnoncesContainer>
-                  }
-                ></Route>
-                <Route
-                  path="/Messagerie"
-                  element={
-                    <Messagerie persons={list2} ></Messagerie>
-                  }
-                ></Route>
-                <Route
-                  path="/Saved"
-                  element = {
-                      <SavedAnnounceContainer annonces={list} saved={true} ></SavedAnnounceContainer>
-                  }
-                ></Route>
-              </Routes>
-        </Router>
+          <Route
+            path="AddSection"
+            element={<AddSection user={this.props.user}></AddSection>}
+          ></Route>
+          <Route
+            path="MyAds"
+            element={
+              <MesAnnoncesContainer
+                admin={true}
+                user={this.props.user}
+              ></MesAnnoncesContainer>
+            }
+          ></Route>
+          <Route
+            path="Messagerie"
+            element={<Messagerie persons={list2} user={this.props.user}></Messagerie>}
+          ></Route>
+          <Route
+            path="Saved"
+            element={
+              <SavedAnnounceContainer saved={true}></SavedAnnounceContainer>
+            }
+          ></Route>
+        </Routes>
       </div>
     );
   }

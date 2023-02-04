@@ -10,7 +10,7 @@ class AdminNavBar extends Component {
     render() { 
         return (
            
-            <NavBar bgColor="bg-[#4285f4]" logo={<Link to="/"><h3 className='text-white font-semibold text-3xl'>Logo</h3> </Link>}>
+            <NavBar bgColor="bg-[#4285f4]" logo={<Link to=""><h3 className='text-white font-semibold text-3xl'>Logo</h3> </Link>}>
                 <AdminCard></AdminCard>
             </NavBar>
         );

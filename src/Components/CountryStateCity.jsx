@@ -344,7 +344,7 @@ const data = {
       }
     ]
   };
-const CountryStateCity = () => {
+const CountryStateCity = (props) => {
     const [selectedCountry] = React.useState("Algeria");
     const [selectedState, setSelectedState] = React.useState();
     const [selectedCity, setSelectedCity] = React.useState();
@@ -354,15 +354,23 @@ const CountryStateCity = () => {
     (s) => s.name === selectedState
   );
 
+  const handleChange = (e) =>{
+    if(e.target.name == 'wilaya') setSelectedState(e.target.value);
+    else setSelectedCity(e.target.value);
+    props.handleFilterChange(e)
+
+  }
+
   return (
     <div className="space-y-3 font-poppins ">
       <div className="text-[#160042]">
         <label className="font-poppins text-[#4285f4] text-sm">Wilaya</label><br></br>
         <select
+          name='wilaya'
           className="rounded-lg w-[220px] h-[40px] border-gray-200 cursor-pointer text-sm text-gray-500"
           placeholder="State"
           value={selectedState}
-          onChange={(e) => setSelectedState(e.target.value)}
+          onChange={handleChange}
         >
           <option>Choisir une wilaya</option>
           {availableState?.states.map((e, key) => {
@@ -381,7 +389,8 @@ const CountryStateCity = () => {
           className="rounded-lg w-[220px] h-[40px] border-gray-200 cursor-pointer text-sm text-gray-500"
           placeholder="City"
           value={selectedCity}
-          onChange={(e) => setSelectedCity(e.target.value)}
+          name='commune'
+          onChange= {handleChange }
         >
           <option>Choisir la commune</option>
           {availableCities?.cities.map((e, key) => {

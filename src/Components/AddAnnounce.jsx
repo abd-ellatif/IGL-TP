@@ -33,22 +33,12 @@ class AddAnnounce extends Component {
             <div className='md:flex md:justify-between md:space-x-4 md:pt-5 md:space-y-0 space-y-3'>
               <div className='text-[#4285f4] '>
                   <h1>Catégorie</h1>
-                  <select className='lg:w-[250px] md:w-[200px] w-[200px] h-[45px] rounded-[13px] border-gray-200 text-gray-500'>
-                    <option>La catégorie...</option>
-                    {this.catBien.map((catBien) => (
-                      <option value={catBien.value} onChange={this.props.handleChange}>{catBien.label}</option>
-                    ))}
-                  </select>
+                  <input  name="categorie" className="h-[45px] border-gray-200 rounded-[13px] md:w-[350px] w-[250px] " placeholder="Saisir du texte ..." type="text" value={this.props.categorie} onChange={this.props.handleChange} />
                   
               </div>
               <div className='text-[#4285f4]'>
                   <h1>Type</h1>
-                  <select className='lg:w-[250px] md:w-[200px] w-[200px] h-[45px] rounded-[13px] border-gray-200 text-gray-500'>
-                    <option>Le type...</option>
-                    {this.typeBien.map((typeBien) => (
-                      <option value={typeBien.value} onChange={this.props.handleChange}>{typeBien.label}</option>
-                    ))}
-                  </select>
+                  <input  name="type" className="h-[45px] border-gray-200 rounded-[13px] md:w-[350px] w-[250px] " placeholder="Saisir du texte ..." type="text" value={this.props.type} onChange={this.props.handleChange} />
               </div>
             </div>
             <div className='md:flex md:justify-between md:space-x-4 md:pt-5 md:space-y-0 space-y-3'>
@@ -62,7 +52,12 @@ class AddAnnounce extends Component {
               </div>
             </div>
             <div className='md:flex md:justify-between md:space-x-4 md:pt-5 md:pb-5 md:space-y-0 space-y-3'>
-              <CountryStateCity/>
+            <h1>Wilaya</h1>
+            <input name="wilaya" className='lg:w-[250px] md:w-[200px] w-[200px] h-[45px] rounded-[13px] border-gray-200' placeholder="" type="text" value={this.props.wilaya} onChange={this.props.handleChange} />
+            </div>
+            <div className='md:flex md:justify-between md:space-x-4 md:pt-5 md:pb-5 md:space-y-0 space-y-3'>
+            <h1>Commune</h1>
+            <input name="commune" className='lg:w-[250px] md:w-[200px] w-[200px] h-[45px] rounded-[13px] border-gray-200' placeholder="" type="text" value={this.props.commune} onChange={this.props.handleChange} />
             </div>
             <div className="text-[#4285f4]  cols-span-4">
                 <h1>Description</h1>

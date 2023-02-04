@@ -6,17 +6,17 @@ import CloseIcon from "../assets/Close.svg"
 import FiltreIcon from "../assets/filtre.svg"
 import '../Filtre.css'
 
-const Filter = () => {
+const Filter = (props) => {
   const[filter,setFilter] = useState(false)
   const handleFilter = () => {
     setFilter(!filter) 
   }
   return (
-    <div class="  w-full bg-white border-r-2 border-gray-200 md:shadow-lg">
+    <div className="  w-full bg-white border-r-2 border-gray-200 md:shadow-lg">
         <div className='Filtre space-x-3 space-y-5 '>
           <p className='font-bold text-[#4285f4] font-poppins text-xl pt-5 ml-3'>Filtrer 🏡</p>
           <h3 className='font-poppins text-[#160042] font-medium'>Localisation</h3>
-          <CountryStateCity/>
+          <CountryStateCity handleFilterChange={props.handleFilterChange}/>
           <CheckBox/>
           <DateRangePicker/>
         </div>

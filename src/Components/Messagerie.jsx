@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {useState} from 'react'
- 
+import { useEffect } from 'react';
 import Inbox from '../assets/inbox.svg';
 import '../DetailedAnnounce.css'
 function Messagerie(props) {
@@ -11,9 +11,22 @@ function Messagerie(props) {
     const[adr,setAdr] = useState("");
     const[mail,setMail] = useState("");
     const[read,setRead] = useState(false);
+    const[listMsg,setListMsg] = useState([])
+    const[listSenders,setListSenders] = useState([])
+
+
+
+
+    const handleSee = ()=>{
+    console.log(listMsg)
+    console.log(listSenders)}
+
+    
     const handleMsg = () => {
       setMsg(true) 
     }
+
+
     function handelInfo (name,msg,num,adr,mail) {
       setInfo(name) 
       setMessage(msg)
@@ -27,25 +40,46 @@ function Messagerie(props) {
     function handleReadMsg () {
       setRead(!read);
     }
-      const list2 = [{
-        nomUtil: "Nesrine Moukebel",num: "+213123456789",adresse: "Rue N°5, Wilaya, Algérie",mail:"kn_moukebel@esi.dz",message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet voluptate eaque distinctio assumenda labore eaque distinctio assumenda labore porro porro eaque distinctio assumenda labore porro", read : false ,
-      },{
-        nomUtil: "Bendjeddou Abdellatif",num: "+213123456789",adresse: "Rue N°5, Wilaya, Algérie",mail:"kn_moukebel@esi.dz", message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet eaque distinctio assumenda labore porro voluptate eaque distinctio assumenda labore porro",  read : false
-      },{
-        nomUtil: "Madani Rafik",num: "+213123456789",adresse: "Rue N°5, Wilaya, Algérie",mail:"kn_moukebel@esi.dz", message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet voluptate eaque distinctio assumenda labore porro",  read : false,
-      },{
-        nomUtil: "Abderrahmane Ou",num: "+213123456789",adresse: "Rue N°5, Wilaya, Algérie",mail:"kn_moukebel@esi.dz",message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet voluptate eaque distinctio assumenda labore porro eaque distinctio assumenda labore porro",  read : false,
-      },{
-        nomUtil: "Nesrine Moukebel",num: "+213123456789",adresse: "Rue N°5, Wilaya, Algérie",mail:"kn_moukebel@esi.dz",message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet voluptate eaque distinctio assumenda labore porro eaque distinctio assumenda labore porro eaque distinctio assumenda labore porroeaque distinctio assumenda labore porro", read : false,},{
-        nomUtil: "Nesrine Moukebel",num: "+213123456789",
-        adresse: "Rue N°5, Wilaya, Algérie",
-        mail:"kn_moukebel@esi.dz", message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet voluptate eaque distinctio assumenda labore porro", read : false,
-      }, { nomUtil: "Nesrine Moukebel",num: "+213123456789",adresse: "Rue N°5, Wilaya, Algérie",mail:"kn_moukebel@esi.dz",message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet voluptate eaque distinctio assumenda labore porro",  read : false,
-      },{
-        nomUtil: "Nesrine Moukebel",num: "+213123456789",adresse: "Rue N°5, Wilaya, Algérie",mail:"kn_moukebel@esi.dz", message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet voluptate eaque distinctio assumenda labore porro",  read : false,
-      },{
-        nomUtil: "Bendjeddou Abdellatif",num: "+213123456789",adresse: "Rue N°5, Wilaya, Algérie",mail:"kn_moukebel@esi.dz", message: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam suscipit eveniet voluptate eaque distinctio assumenda labore porro",  read : false,
-      },];
+      
+   
+    useEffect (
+       async ()=>{
+      const id = JSON.parse(localStorage.getItem('user-state')).id;
+
+      await fetch("http://127.0.0.1:8000/message_list", {
+      method: "POST",
+      body:JSON.stringify({id:id}),
+      headers: { "Content-type": "application/json; charset=UTF-8" }
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setListMsg(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+
+       }
+   ,[] )
+
+   useEffect(()=>{
+    listMsg.map((item)=>{
+      fetch("http://127.0.0.1:8000/user", {
+       method: "POST",
+       body: JSON.stringify({owner:item.utilisateur}),
+       headers: { "Content-type": "application/json; charset=UTF-8" },
+     })
+       .then((response) => response.json())
+       .then((data) => {
+         setListSenders((listSenders)=>{return [...listSenders,data]})
+       })
+       .catch((err) => {
+         console.log(err.message);
+       });
+ })
+   },[listMsg])
+
+ 
       
         return (
             <div className='Messagerie md:grid lg:grid-cols-5 md:grid-cols-3 h-screen bg-[#fafafa]'>
@@ -53,11 +87,12 @@ function Messagerie(props) {
                     <h1 class="text-[18px] text-[#160042] font-medium ml-8 mt-[20px]">Messagerie 👋🏻</h1>
                     <ul id="List" class="ml-[10%] space-y-3 pt-[20px]">
                         <div className='w-[90%] bg-gray-100 h-0.5 mt-3 mb-3 '></div>
-                        {list2.map((item)=>(
+                        {listSenders.map((item,index)=>(
+                          
                             <div>
-                                <div className='flex items-center space-x-5 cursor-pointer hover:text-[#4285f4] ' onClick={function(event){handleMsg();handleRead(true);handelInfo(item.nomUtil,item.message,item.num,item.adresse,item.mail)}}>
+                                <div className='flex items-center space-x-5 cursor-pointer hover:text-[#4285f4] ' onClick={function(event){handleMsg();handleRead(true);handelInfo(item.nom+' '+item.prenom,listMsg[index].content,item.telephone,item.adresse,item.email)}}>
                                  <li class="fa-regular fa-user" ></li>
-                                  <li class="text-[14px] active:font-bold focus:font-bold " >{item.nomUtil}</li>
+                                  <li class="text-[14px] active:font-bold focus:font-bold " >{item.nom+' '+item.prenom}</li>
                                   
                                 </div>
                                 <div className='w-[90%] bg-[#efefef] h-0.5 mt-3 mb-3 rounded-lg '></div>
@@ -72,13 +107,13 @@ function Messagerie(props) {
                     <h1 class="text-[18px] text-[#160042] font-medium ml-8 mt-[20px]">Messagerie 👋🏻</h1>
                     <ul id="List" class="ml-[10%] space-y-3 pt-[20px]">
                         <div className='w-[90%] bg-gray-100 h-0.5 mt-3 mb-3 '></div>
-                        {list2.map((item)=>(
+                        {listSenders.map((item,index)=>(
                             <div>
-                                <div className='flex items-center space-x-5 cursor-pointer hover:text-[#4285f4] ' onClick={function(event){handleMsg();handleRead(true);handelInfo(item.nomUtil,item.message,item.num,item.adresse,item.mail)}}>
+                                <div className='flex items-center space-x-5 cursor-pointer hover:text-[#4285f4] ' onClick={function(event){handleMsg();handleRead(true);handelInfo(item.nom+' '+item.prenom,listMsg[index].content,item.telephone,item.adresse,item.email)}}>
                                  <li class="fa-regular fa-user" ></li>
                                  <div class="flex-row ">
-                                  <li class="text-[14px] active:font-bold focus:font-bold " >{item.nomUtil}</li>
-                                  <li class="text-[12px]">{item.num}</li>
+                                  <li class="text-[14px] active:font-bold focus:font-bold " >{item.nom+' '+item.prenom}</li>
+                                  <li class="text-[12px]">{item.telephone}</li>
                                  </div>
                                   
                                 </div>
