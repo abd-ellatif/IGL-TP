@@ -47,7 +47,8 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setUser(data);
+        if(data.email == "no user") alert('Il n ya pas de compte avec cette adresse email')
+        else setUser(data);
       })
       .catch((err) => {
         console.log(err.message);

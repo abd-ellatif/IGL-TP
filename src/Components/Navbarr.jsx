@@ -12,7 +12,7 @@ const Navbar = () => {
   }
   return (
     <div className=' flex sticky justify-between top-0  items-center h-20 font-poppins  max-w-10xl mx-auto px-10 text-white bg-white border-b-2 z-50'>
-        <h1 className='w-full text-3xl font-bold text-[#4285f4]'><Link to="/">Dz Annonces</Link></h1>
+        <h1 className='w-full text-3xl font-bold text-[#4285f4]'><Link to="/"><img src='/logoB.png' className='h-10 w-40'></img></Link></h1>
         <div className='hidden md:flex space-x-4' >
           <Link to="/SignUp"><button className='bg-[#f8f8f8] w-[200px]  rounded-md  p-3 text-[#4285f4]'>S'inscrire</button></Link>
           <Link to="/LogIn"><button className='bg-[#4285F4] w-[200px]  rounded-md  p-3 text-white'>Se connecter</button></Link>

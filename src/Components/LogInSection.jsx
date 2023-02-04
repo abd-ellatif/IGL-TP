@@ -21,7 +21,7 @@ class LogInSection extends Component {
 
     handleHH = async (response)=>{
       await this.props.handleLogin(response)
-      this.setState({hidden : false})
+       this.setState({hidden : false})
     }
 
 

@@ -19,9 +19,6 @@ class AddSection extends Component {
     }
 
     handleSubmit = ()=>{
-     console.log(this.state)
-     console.log(this.props.user)
-     console.log(JSON.stringify({titre: this.state.titre, description: this.state.description,surface :Number(this.state.surface),price :Number(this.state.prix) ,type:this.state.type,category:this.state.categorie,Signal: false,location:this.state.wilaya + ' '+this.state.commune,owner:this.props.user.id}));
      fetch("http://127.0.0.1:8000/ai_create", {
       method: "POST",
       body: JSON.stringify({titre: this.state.titre, description: this.state.description,surface :Number(this.state.surface),price :Number(this.state.prix) ,type:this.state.type,category:this.state.categorie,Signal: false,location:this.state.wilaya + '-'+this.state.commune,owner:this.props.user.id}),
@@ -29,6 +26,7 @@ class AddSection extends Component {
     })
       .then((response) => response.json())
       .then((data) => {
+        alert('Annonce ajoutée')
       })
       .catch((err) => {
         console.log(err.message);
