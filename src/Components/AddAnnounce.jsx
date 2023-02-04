@@ -32,12 +32,12 @@ class AddAnnounce extends Component {
             </label>
             <div className='md:flex md:justify-between md:space-x-4 md:pt-5 md:space-y-0 space-y-3'>
               <div className='text-[#4285f4] '>
-                  <h1>Catégorie</h1>
+                  <h1>Type</h1>
                   <input  name="categorie" className="h-[45px] border-gray-200 rounded-[13px] md:w-[350px] w-[250px] " placeholder="Saisir du texte ..." type="text" value={this.props.categorie} onChange={this.props.handleChange} />
                   
               </div>
               <div className='text-[#4285f4]'>
-                  <h1>Type</h1>
+                  <h1>Catégorie</h1>
                   <input  name="type" className="h-[45px] border-gray-200 rounded-[13px] md:w-[350px] w-[250px] " placeholder="Saisir du texte ..." type="text" value={this.props.type} onChange={this.props.handleChange} />
               </div>
             </div>

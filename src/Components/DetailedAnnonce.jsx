@@ -104,8 +104,9 @@ const DetailedAnnonce = (props) => {
                    
                         
                         {!props.admin ? <div className=" flex space-x-[60px] pl-10 mr-5 items-center pt-6 text-[14px] pb-[20px]">
+                        {(props.user.id == props.annonce.owner)? null :  <button className="bg-[#4285F4] w-[215px] h-[44px] text-[16px] rounded-md  p-3 text-white" onClick={handleMessage}>Envoyer un message</button>}
                        
-                        <button className="bg-[#4285F4] w-[215px] h-[44px] text-[16px] rounded-md  p-3 text-white" onClick={handleMessage}>Envoyer un message</button>
+                       
                         
                     
                     </div>: null}
